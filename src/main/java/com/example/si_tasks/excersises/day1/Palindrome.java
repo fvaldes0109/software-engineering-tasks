@@ -2,7 +2,7 @@ package com.example.si_tasks.excersises.day1;
 
 public class Palindrome {
 
-    public static boolean IsPalindrome(int n) {
+    public static boolean isPalindrome(int n) {
 
         if (n < 0) {
             throw new IllegalArgumentException("The value must be must be a positive integer");
