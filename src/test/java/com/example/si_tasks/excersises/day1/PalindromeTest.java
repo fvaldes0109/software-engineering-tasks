@@ -1,5 +1,7 @@
 package com.example.si_tasks.excersises.day1;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -39,12 +41,15 @@ public class PalindromeTest {
 
     @Test
     void testNegative() {
-    
-        try {
-            Palindrome.isPalindrome(-1);
-            assert false;
-        } catch (IllegalArgumentException e) {
-            assert true;
-        }
+        
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-1));
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-10));
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-123));
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-1234));
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-12345));
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-123456));
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-1234567));
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-12345678));
+        assertThrows(IllegalArgumentException.class, () -> Palindrome.isPalindrome(-123456789));
     }
 }
